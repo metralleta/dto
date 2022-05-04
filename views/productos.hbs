@@ -1,0 +1,30 @@
+
+    <a href="/productos/new" class="btn btn-outline-primary">Nuevo</a>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Thumbnail</th>
+                <th scope="col">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each productos}}
+                <tr class="table-active">
+                    <th>{{ this.nombre }}</th>
+                    <td>{{ this.descripcion }}</td>
+                    <td>{{ this.precio }}</td>
+                    <td>{{ this.stock }}</td>
+                    <td><img src="{{ this.thumbnail }}" alt=""></td>
+                    <td>
+                        <a href="/productos/{{ this.id }}?_method=DELETE"><i class="fa-solid fa-trash-can"></i></a>
+                        <a href="/productos/update/{{ this.id }}"><i class="fa-solid fa-file-pen"></i></a>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
